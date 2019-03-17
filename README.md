@@ -311,11 +311,11 @@ pip3
 </a>
 ,
 <a href="https://virtualenv.pypa.io/en/latest/" title="Virtualenv1">
-Virtualenv1
+virtualenv1
 </a>
 and
 <a href="https://packaging.python.org/guides/installing-using-pip-and-virtualenv/" title="Virtualenv2">
-Virtualenv2
+virtualenv2
 </a>
 .<br />
 
@@ -491,8 +491,8 @@ K. Export a conda package list.<br />
 ```
 
 L. Install packages from the exported conda package list.<br />
-```bash
 &nbsp; &nbsp; The name of activated conda virtual environment: conda_new<br />
+```bash
 (conda_new) usrname@hostname:~/curr_path$ conda install --yes --file requirements.txt # does not automatically install all the dependencies
 ```
 ```bash
