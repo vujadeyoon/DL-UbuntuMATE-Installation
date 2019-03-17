@@ -13,10 +13,11 @@
 7.  [How to install a GPU driver](#gpu_driver)
 8.  [How to install a CUDA toolkit](#cuda_toolkit)
 9.  [How to install a cuDNN](#cudnn)
-10. [How to install and use an Anaconda](#conda)
-11. [How to install a PyTorch](#pytorch)
-12. [How to install a TensorFlow](#tensorflow)
-13. [How to set an Pycharm environment](#pycharm)
+10. [How to install and use pip3 and virtualenv](#pip3_virtualenv)
+11. [How to install and use an Anaconda](#conda)
+12. [How to install a PyTorch](#pytorch)
+13. [How to install a TensorFlow](#tensorflow)
+14. [How to set an Pycharm environment](#pycharm)
 
 
 ## 0. Summarized environments about the DL-UbuntuMATE18.04LTS-Installation <a name="envs"></a>
@@ -138,7 +139,7 @@ A. Download a CUDA toolkit with reference to the websites,
 <a href="https://developer.nvidia.com/cuda-downloads" title="CUDA toolkit">
 CUDA toolkit
 </a>
-, 
+and
 <a href="https://developer.nvidia.com/cuda-toolkit-archive" title="CUDA toolkit archive">
 CUDA toolkit archive
 </a>
@@ -264,7 +265,7 @@ usrname@hostname:~/curr_path$ sudo ./usr/local/cuda-10.0/bin/uninstall_cuda_10.0
 
 ## 9. How to install a cuDNN <a name="cudnn"></a>
 A. Download a cuDNN (e.g. cuDNN v7.4.2 Library for Linux) with reference to the websites,
-<a href="https://developer.nvidia.com/rdp/cudnn-download" title="cuDNN">
+<a href="https://developer.nvidia.com/rdp/cudnDownloadn-download" title="cuDNN">
 cuDNN
 </a>
 , 
@@ -303,7 +304,100 @@ usrname@hostname:~/curr_path$ sudo apt-get install libcupti-dev
 ```
 
 
-## 10. How to install and use an Anaconda <a name="conda"></a>
+## 10. How to install and use an pip3 and virtualenv <a name="pip3_virtualenv"></a>
+A. Check the pip (pip3) and virtualenv usages with reference to the websites,
+<a href="https://pip.pypa.io/en/stable/" title="Pip3">
+pip3
+</a>
+,
+<a href="https://virtualenv.pypa.io/en/latest/" title="Virtualenv1">
+Virtualenv1
+</a>
+and
+<a href="https://packaging.python.org/guides/installing-using-pip-and-virtualenv/" title="Virtualenv2">
+Virtualenv2
+</a>
+.<br />
+
+B. Install the pip3.<br />
+```bash
+usrname@hostname:~/curr_path$ sudo apt-get install python3-pip
+```
+
+C. Check the installed pip3 version.<br />
+```bash
+usrname@hostname:~/curr_path$ pip3 --version
+```
+```bash
+    pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
+```
+
+D. Install the virtualenv.<br />
+```bash
+usrname@hostname:~/curr_path$ pip3 install virtualenv
+```
+```bash
+    Installing collected packages: virtualenv
+    Successfully installed virtualenv-16.4.3
+```
+
+E. Check the installed virtualenv version.<br />
+```bash
+usrname@hostname:~/curr_path$ virtualenv --version
+```
+```bash
+    16.4.3
+```
+
+F. Create a virtualenv for python 3.7 with pip3.<br />
+&nbsp; &nbsp; The root directory for the virtualenv: /home/usrname/pip3_virtualenv<br />
+&nbsp; &nbsp; The name of new virtualenv to be created: virenv_dl<br />
+```
+usrname@hostname:~/curr_path$ mkdir -p /home/usrname/pip3_virtualenv/virenv_dl
+usrname@hostname:~/curr_path$ virtualenv /home/usrname/pip3_virtualenv/virenv_dl --python=python3.7
+```
+
+G. Check the virtualenv.<br />
+&nbsp; &nbsp; The root directory for the virtualenv: /home/usrname/pip3_virtualenv<br />
+```bash
+usrname@hostname:~/curr_path$ ls /home/usrname/pip3_virtualenv/
+```
+
+H. Activate a virtualenv.<br />
+&nbsp; &nbsp; The root directory for the virtualenv: /home/usrname/pip3_virtualenv<br />
+&nbsp; &nbsp; The name of virtualenv to be activated: virenv_dl<br />
+```bash
+usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_dl/bin/activate
+```
+
+I. Deactivate a virtualenv.<br />
+&nbsp; &nbsp; The name of virtualenv to be deactivated: virenv_dl<br />
+```bash
+(virenv_dl) usrname@hostname:~/curr_path$ deactivate
+```
+
+J. Remove a virtualenv.<br />
+&nbsp; &nbsp; The root directory for the virtualenv: /home/usrname/pip3_virtualenv<br />
+&nbsp; &nbsp; The name of virtualenv to be removed: virenv_dl<br />
+```bash
+(virenv_dl) usrname@hostname:~/curr_path$ deactivate
+usrname@hostname:~/curr_path$ rm -rf /home/usrname/pip3_virtualenv/virenv_dl
+```
+
+K. Export a pip3 package list.<br />
+&nbsp; &nbsp; The name of activated virtualenv: virenv_dl<br />
+```bash
+(virenv_dl) usrname@hostname:~/curr_path$ pip3 freeze > requirements.txt
+```
+
+L. Install packages from the exported pip3 package list.<br />
+&nbsp; &nbsp; The name of activated virtualenv: virenv_new<br />
+```bash
+(virenv_new) usrname@hostname:~/curr_path$ pip3 install -r requirements.txt
+```
+
+
+## 11. How to install and use an Anaconda <a name="conda"></a>
 A. Download an Anaconda with reference to the website,
 <a href="https://www.anaconda.com/download/#linux" title="Anaconda">
 Anaconda
@@ -338,7 +432,7 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
         The following packages will be UPDATED:
         Proceed ([y]/n)? (y)
         
-</details>
+</details>conda envrionments
 
 D. Check the installed conda version.<br />
 ```bash
@@ -359,39 +453,68 @@ usrname@hostname:~/curr_path$ conda info --envs
     
 ```
 
-F. Create virtual environments for python 3.7 with conda.<br />
-&nbsp; &nbsp; The name of new virtual environment to be created: conda_dl<br />
+F. Create a conda virtual environments for python 3.7 with conda.<br />
+&nbsp; &nbsp; The name of new conda virtual environment to be created: conda_dl<br />
 ```
 usrname@hostname:~/curr_path$ conda create --name conda_dl python=3.7
 ```
 
 G. Clone a conda virtual environment.<br />
-&nbsp; &nbsp; The name of new virtual environment to be cloned: conda_pytorch<br />
-&nbsp; &nbsp; The name of existed virtual environment: conda_dl<br />
+&nbsp; &nbsp; The name of new conda virtual environment to be cloned: conda_pytorch<br />
+&nbsp; &nbsp; The name of existed conda virtual environment: conda_dl<br />
 ```bash
 usrname@hostname:~/curr_path$ conda create --name conda_pytorch --clone conda_dl
 ```
 
-H. Activate a conda environment.<br />
-&nbsp; &nbsp; The name of virtual environment to be activated: conda_pytorch<br />
+H. Activate a conda virtual environment.<br />
+&nbsp; &nbsp; The name of conda virtual environment to be activated: conda_pytorch<br />
 ```bash
 usrname@hostname:~/curr_path$ conda activate conda_pytorch
 ```
 
-I. Deactivate a conda environment.<br />
-&nbsp; &nbsp; The name of virtual environment to be deactivated: conda_pytorch<br />
+I. Deactivate a conda virtual environment.<br />
+&nbsp; &nbsp; The name of conda virtual environment to be deactivated: conda_pytorch<br />
 ```bash
 (conda_pytorch) usrname@hostname:~/curr_path$ conda deactivate
 ```
 
 J. Remove a conda virtual environment.<br />
-&nbsp; &nbsp; The name of virtual environment to be removed: conda_dl<br />
+&nbsp; &nbsp; The name of conda virtual environment to be removed: conda_dl<br />
 ```bash
 usrname@hostname:~/curr_path$ conda remove --name conda_dl --all
 ```
 
+K. Export a conda package list.<br />
+&nbsp; &nbsp; The name of activated conda virtual environment: conda_pytorch<br />
+```bash
+(conda_pytorch) usrname@hostname:~/curr_path$ conda list -e > requirements.txt
+```
 
-## 11. How to install a PyTorch <a name="pytorch"></a>
+L. Install packages from the exported conda package list.<br />
+```bash
+&nbsp; &nbsp; The name of activated conda virtual environment: conda_new<br />
+(conda_new) usrname@hostname:~/curr_path$ conda install --yes --file requirements.txt # does not automatically install all the dependencies
+```
+```bash
+(conda_new) usrname@hostname:~/curr_path$ while read requirement; do conda install --yes $requirement; done < requirements.txt # automatically install all the dependencies
+```
+
+M. Export a conda virtual envrionment.<br />
+&nbsp; &nbsp; The name of conda virtual environment to be exported: conda_pytorch<br />
+&nbsp; &nbsp; The name of exported file: exported_env.yml<br />
+```bash
+usrname@hostname:~/curr_path$ conda conda_pytorch export > exported_env.yml
+```
+
+N. Create a conda virtual environment with the exported conda virtual environment.<br />
+&nbsp; &nbsp; The name of new conda virtual environment to be created: conda_new<br />
+&nbsp; &nbsp; The name of exported file: exported_env.yml<br />
+```bash
+usrname@hostname:~/curr_path$ conda conda_new create -f exported_env.yml
+```
+
+
+## 12. How to install a PyTorch <a name="pytorch"></a>
 A. Check a PyTorch version with reference to the website,
 <a href="https://pytorch.org" title="PyTorch">
 PyTorch
@@ -399,7 +522,7 @@ PyTorch
 .<br />
 
 B. Install the PyTorch where user want to install it.<br />
-&nbsp; &nbsp; The name of virtual environment where user want to install the PyTorch: conda_pytorch<br />
+&nbsp; &nbsp; The name of conda virtual environment where user want to install the PyTorch: conda_pytorch<br />
 ```bash
 usrname@hostname:~/curr_path$ conda activate conda_pytorch
 (conda_pytorch) usrname@hostname:~/curr_path$ conda install pytorch torchvision cuda100 -c pytorch
@@ -429,7 +552,7 @@ tensor([0.4732, 0.1292, 0.7363, 0.6000, 0.2162], device='cuda:0')
 ```
 
 
-## 12. How to install a TensorFlow <a name="tensorflow"></a>
+## 13. How to install a TensorFlow <a name="tensorflow"></a>
 A. Check a TensorFlow version with reference to the website,
 <a href="https://www.tensorflow.org" title="TensorFlow">
 TensorFlow
@@ -437,14 +560,14 @@ TensorFlow
 .<br />
 
 B. Install the TensorFlow where user want to install it.<br />
-&nbsp; &nbsp; The name of virtual environment where user want to install the TensorFlow: conda_tf<br />
+&nbsp; &nbsp; The name of conda virtual environment where user want to install the TensorFlow: conda_tf<br />
 ```bash
 usrname@hostname:~/curr_path$ conda activate conda_tf
 (conda_tf) usrname@hostname:~/curr_path$ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.12.0-cp36-cp36m-linux_x86_64.whl
 ```
 
 
-## 13. How to set an Pycharm environment <a name="pycharm"></a>
+## 14. How to set an Pycharm environment <a name="pycharm"></a>
 A. Download a Pycharm which is a kind of Python IDEs with reference to the website,
 <a href="https://www.jetbrains.com/pycharm/download/#section=linux" title="Pycharm">
 Pycharm
