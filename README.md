@@ -18,6 +18,7 @@
 12. [How to install a PyTorch](#pytorch)
 13. [How to install a TensorFlow](#tensorflow)
 14. [How to set an Pycharm environment](#pycharm)
+15. [Others](#others)
 
 
 ## 0. Summarized environments about the DL-UbuntuMATE18.04LTS-Installation <a name="envs"></a>
@@ -593,3 +594,11 @@ D. Create a new project with existing interpreter which is in a specific conda e
 
 E. How to set a project interpreter.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/13_Pycharm/2.png" width="80%"/><br />
+
+
+## 15. Others <a name="others"></a>
+A. How to fix NTFS disk write-protect.<br />
+```bash
+usrname@hostname:~/curr_path$ sudo ntfsfix /dev/sdb1
+```
+
