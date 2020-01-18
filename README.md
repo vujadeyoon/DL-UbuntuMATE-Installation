@@ -99,7 +99,7 @@ B. Install the NVIDIA driver which user selects.<br />
 usrname@hostname:~/curr_path$ sudo add-apt-repository ppa:graphics-drivers/ppa
 usrname@hostname:~/curr_path$ sudo apt-get update
 # usrname@hostname:~/curr_path$ sudo apt-get install nvidia-390
-usrname@hostname:~/curr_path$ sudo apt-get install nvidia-driver-410
+usrname@hostname:~/curr_path$ sudo apt-get install nvidia-410
 usrname@hostname:~/curr_path$ sudo reboot
 ```
 
