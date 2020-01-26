@@ -13,20 +13,21 @@
 7.  [How to install a GPU driver](#gpu_driver)
 8.  [How to install a CUDA toolkit](#cuda_toolkit)
 9.  [How to install a cuDNN](#cudnn)
-10. [How to install and use pip3 and virtualenv](#pip3_virtualenv)
-11. [How to install and use an Anaconda](#conda)
-12. [How to install a PyTorch](#pytorch)
-13. [How to install a TensorFlow](#tensorflow)
-14. [How to set an Pycharm environment](#pycharm)
-15. [Others](#others)
+10. [How to install python 3.7](#python3.7)
+11. [How to install and use pip, pip3 and virtualenv](#pip_virtualenv)
+12. [How to install and use an Anaconda](#conda)
+13. [How to install a PyTorch](#pytorch)
+14. [How to install a TensorFlow](#tensorflow)
+15. [How to set an Pycharm environment](#pycharm)
+16. [Others](#others)
 
 
 ## 0. Summarized environments about the DL-UbuntuMATE18.04LTS-Installation <a name="envs"></a>
-- Operating System (OS): Ubuntu MATE 18.04.1 LTS (Bionic)
-- Graphics Processing Unit (GPU): NVIDIA TITAN Xp
-- GPU driver: Nvidia-410.78
-- CUDA toolkit: CUDA 10.0
-- cuDNN: cuDNN v7.4.2
+- Operating System (OS): Ubuntu MATE 18.04.3 LTS (Bionic)
+- Graphics Processing Unit (GPU): NVIDIA TITAN Xp, 1ea
+- GPU driver: Nvidia-430.64
+- CUDA toolkit: CUDA 10.1
+- cuDNN: cuDNN v7.6.5
 
 
 ## 1. How to set an additional language <a name="language"></a>
@@ -35,10 +36,12 @@ B. Select a fcitx option for a keyboard input method system.<br />
 &nbsp; &nbsp; Note that the fcitx option is valid when rerunning the program.<br /> 
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/1.png" width="80%"/><br />
 C. Logout and login<br />
-D. Add input method (e.g. Hangul)<br />
+D. Click the keyboard icon in the upper right corner of the desktop
+E. Add input method (e.g. Hangul)<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/2.png" width="80%"/><br />
-E. Set an input method configuration.<br />
+F. Set an input method configuration.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/3.png" width="80%"/><br />
+
 
 ## 2. How to remove the Firefox browser and install the Opera browser <a name="ib"></a>
 A. Remove the Firefox browser.<br />
@@ -98,8 +101,7 @@ B. Install the NVIDIA driver which user selects.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo add-apt-repository ppa:graphics-drivers/ppa
 usrname@hostname:~/curr_path$ sudo apt-get update
-# usrname@hostname:~/curr_path$ sudo apt-get install nvidia-390
-usrname@hostname:~/curr_path$ sudo apt-get install nvidia-410
+usrname@hostname:~/curr_path$ sudo apt-get install nvidia-driver-430
 usrname@hostname:~/curr_path$ sudo reboot
 ```
 
@@ -108,24 +110,22 @@ C. Check the installed NVIDIA driver version.<br />
 usrname@hostname:~/curr_path$ nvidia-smi
 ```
 ```bash
-    Mon Dec 24 10:51:12 2018       
+    Mon Jan 27 00:57:44 2020       
     +-----------------------------------------------------------------------------+
-    | NVIDIA-SMI 410.78       Driver Version: 410.78       CUDA Version: 10.0     |
+    | NVIDIA-SMI 430.64       Driver Version: 430.64       CUDA Version: 10.1     |
     |-------------------------------+----------------------+----------------------+
     | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
     | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
     |===============================+======================+======================|
     |   0  TITAN Xp            Off  | 00000000:01:00.0  On |                  N/A |
-    | 23%   41C    P8    12W / 250W |    463MiB / 12192MiB |      8%      Default |
+    | 23%   33C    P8    13W / 250W |    323MiB / 12192MiB |      1%      Default |
     +-------------------------------+----------------------+----------------------+
-    
+
     +-----------------------------------------------------------------------------+
     | Processes:                                                       GPU Memory |
     |  GPU       PID   Type   Process name                             Usage      |
     |=============================================================================|
-    |    0       951      G   /usr/lib/xorg/Xorg                           266MiB |
-    |    0      1777      G   compiz                                       148MiB |
-    |    0      2047      G   ...uest-channel-token=14304842928010396328    45MiB |
+    |    0      1077      G   /usr/lib/xorg/Xorg                           228MiB |
     +-----------------------------------------------------------------------------+
 ```
 
@@ -154,30 +154,87 @@ NVIDIA CUDA Installation Guide for Linux
 
 B. Install the CUDA toolkit which user selects.<br />
 ```bash
-usrname@hostname:~/curr_path$ sudo chmod +x cuda_10.0.130_410.48_linux.run
-usrname@hostname:~/curr_path$ sudo ./cuda_10.0.130_410.48_linux.run --override
+usrname@hostname:~/curr_path$ sudo chmod +x cuda_10.1.105_418.39_linux.run
+usrname@hostname:~/curr_path$ sudo ./cuda_10.1.105_418.39_linux.run --override
 ```
 ```bash
-    Do you accept the previously read EULA?
-    accept/decline/quit: (accept)
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │  End User License Agreement                                                  │
+    │  --------------------------                                                  │
+    │                                                                              │
+    │                                                                              │
+    │  Preface                                                                     │
+    │  -------                                                                     │
+    │                                                                              │
+    │  The Software License Agreement in Chapter 1 and the Supplement              │
+    │  in Chapter 2 contain license terms and conditions that govern               │
+    │  the use of NVIDIA software. By accepting this agreement, you                │
+    │  agree to comply with all the terms and conditions applicable                │
+    │  to the product(s) included herein.                                          │
+    │                                                                              │
+    │                                                                              │
+    │  NVIDIA Driver                                                               │
+    │                                                                              │
+    │                                                                              │
+    │  Description                                                                 │
+    │                                                                              │
+    │  This package contains the operating system driver and                       │
+    │──────────────────────────────────────────────────────────────────────────────│
+    │ Do you accept the above EULA? (accept/decline/quit):                         │
+    │ (accept)                                                                     │
+    └──────────────────────────────────────────────────────────────────────────────┘
     
-    # You are attempting to install on an unsupported configuration. Do you wish to continue?
-    # (y)es/(n)o [ default is no ]: (yes)
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │ CUDA Installer                                                               │ 
+    │ - [ ] Driver                                                                 │
+    │      [ ] 418.39                                                              │
+    │ - [X] CUDA Toolkit 10.1                                                      │
+    │    + [X] CUDA Tools 10.1                                                     │
+    │    + [X] CUDA Libraries 10.1                                                 │
+    │    + [X] CUDA Compiler 10.1                                                  │
+    │      [X] CUDA Misc Headers 10.1                                              │
+    │   [ ] CUDA Samples 10.1                                                      │
+    │   [ ] CUDA Demo Suite 10.1                                                   │
+    │   [ ] CUDA Documentation 10.1                                                │
+    │   Install                                                                    │
+    │   Options                                                                    │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │ Up/Down: Move | Left/Right: Expand | 'Enter': Select | 'A': Advanced options │
+    └──────────────────────────────────────────────────────────────────────────────┘
     
-    Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 410.48?
-    (y)es/(n)o/(q)uit: (no)
-    
-    Install the CUDA 10.0 Toolkit?
-    (y)es/(n)o/(q)uit: (yes)
-    
-    Enter Toolkit Location
-    [ default is /usr/local/cuda-10.0 ]: (ENTER)
-    
-    Do you want to install a symbolic link at /usr/local/cuda?  
-    (y)es/(n)o/(q)uit: (yes)
-    
-    Install the CUDA 10.0 Samples?
-    (y)es/(n)o/(q)uit: (no)
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │ CUDA Toolkit                                                                 │
+    │   Change Toolkit Install Path                                                │
+    │   [X] Create symbolic link from /usr/local/cuda                              │
+    │ - [X] Create desktop menu shortcuts                                          │
+    │      [X] All users                                                           │
+    │      [ ] Yes                                                                 │
+    │      [ ] No                                                                  │
+    │   [X] Install manpage documents to /usr/share/man                            │
+    │   Done                                                                       │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │                                                                              │
+    │ Up/Down: Move | Left/Right: Expand | 'Enter': Select | 'A': Advanced options │
+    └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
 C. Ignore the below warning about incompleted installation.<br /> 
@@ -185,59 +242,34 @@ C. Ignore the below warning about incompleted installation.<br />
     ===========
     = Summary =
     ===========
-    
+
     Driver:   Not Selected
-    Toolkit:  Installed in /usr/local/cuda-10.0
+    Toolkit:  Installed in /usr/local/cuda-10.1/
     Samples:  Not Selected
-    
+
     Please make sure that
-     -   PATH includes /usr/local/cuda-10.0/bin
-     -   LD_LIBRARY_PATH includes /usr/local/cuda-10.0/lib64, or, add /usr/local/cuda-10.0/lib64 to /etc/ld.so.conf and run ldconfig as root
-    
-    To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-10.0/bin
-    
-    Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.0/doc/pdf for detailed information on setting up CUDA.
-    
-    ***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 384.00 is required for CUDA 10.0 functionality to work.
+     -   PATH includes /usr/local/cuda-10.1/bin
+     -   LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+    To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.1/bin
+
+    Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
+    ***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
     To install the driver using this installer, run the following command, replacing <CudaInstaller> with the name of this run file:
-    sudo <CudaInstaller>.run -silent -driver
-    
-    Logfile is /tmp/cuda_install_5754.log
-    Signal caught, cleaning up
+        sudo <CudaInstaller>.run --silent --driver
+
+    Logfile is /var/log/cuda-installer.log
 ```
 ```bash
-usrname@hostname:~/curr_path$ sudo ./cuda_10.0.130_410.48_linux.run -silent -driver
+usrname@hostname:~/curr_path$ sudo ./cuda_10.1.105_418.39_linux.run --silent --driver
 ```
-
-<details>
-    <summary>D. (Option) Update CUDA toolkits.</summary>
-    
-    usrname@hostname:~/curr_path$ sudo chmod +x cuda_9.0.176.1_linux.run
-    usrname@hostname:~/curr_path$ sudo ./cuda_9.0.176.1_linux.run
-    
-        NVIDIA CUDA Toolkit
-        Do you accept the previously read EULA?
-        accept/decline/quit: (accept)
-        
-        Enter CUDA Toolkit installation directory
-        [ default is /usr/local/cuda-9.0 ]: (ENTER)
-
-</details>
 
 E. Make sure that CUDA path and LD_LIBRARY_path.<br />
 ```bash
 usrname@hostname:~/curr_path$ echo -e "\n## CUDA and cuDNN paths"  >> ~/.bashrc
-# usrname@hostname:~/curr_path$ echo 'export CUDA_HOME=/usr/local/cuda-10.0' >> ~/.bashrc
-# usrname@hostname:~/curr_path$ echo 'export PATH=/usr/local/cuda-10.0/bin' >> ~/.bashrc
-# usrname@hostname:~/curr_path$ echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64' >> ~/.bashrc
-usrname@hostname:~/curr_path$ echo 'export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}' >> ~/.bashrc
-usrname@hostname:~/curr_path$ echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+usrname@hostname:~/curr_path$ echo 'export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}' >> ~/.bashrc
+usrname@hostname:~/curr_path$ echo echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 usrname@hostname:~/curr_path$ source ~/.bashrc
-```
-```bash
-# usrname@hostname:~/curr_path$ sudo sh -c "echo '/usr/local/cuda-10.0/lib64' >> /etc/ld.so.conf.d/cuda.conf"
-# usrname@hostname:~/curr_path$ sudo sh -c "echo '/usr/local/cuda-10.0/lib' >> /etc/ld.so.conf.d/cuda.conf"
-# usrname@hostname:~/curr_path$ sudo ldconfig
 usrname@hostname:~/curr_path$ sudo reboot
 ```
 
@@ -247,26 +279,26 @@ usrname@hostname:~/curr_path$ nvcc --version
 ```
 ```bash
     nvcc: NVIDIA (R) Cuda compiler driver
-    Copyright (c) 2005-2018 NVIDIA Corporation
-    Built on Sat_Aug_25_21:08:01_CDT_2018
-    Cuda compilation tools, release 10.0, V10.0.130
+    Copyright (c) 2005-2019 NVIDIA Corporation
+    Built on Fri_Feb__8_19:08:17_PST_2019
+    Cuda compilation tools, release 10.1, V10.1.105
 ```
 ```bash
 usrname@hostname:~/curr_path$ which nvcc
 ```
 ```bash
-    /usr/local/cuda-10.0/bin/nvcc
+    /usr/local/cuda-10.1/bin/nvcc
 ```
 
 G. Uninstall the installed CUDA toolkit.<br />
 ```bash
-usrname@hostname:~/curr_path$ sudo ./usr/local/cuda-10.0/bin/uninstall_cuda_10.0.pl
+usrname@hostname:~/curr_path$ sudo ./usr/local/cuda-10.1/bin/uninstall_cuda_10.1.pl
 ```
 
 
 ## 9. How to install a cuDNN <a name="cudnn"></a>
-A. Download a cuDNN (e.g. cuDNN v7.4.2 Library for Linux) with reference to the websites,
-<a href="https://developer.nvidia.com/rdp/cudnDownloadn-download" title="cuDNN">
+A. Download a cuDNN (e.g. cuDNN v7.6.5 Library for Linux) with reference to the websites,
+<a href="https://developer.nvidia.com/rdp/cudnn-download" title="cuDNN">
 cuDNN
 </a>
 , 
@@ -278,11 +310,11 @@ cuDNN archive
 
 B. Install the downloaded cuDNN.<br />
 ```bash
-usrname@hostname:~/curr_path$ tar xzvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
-usrname@hostname:~/curr_path$ sudo cp cuda/lib64/* /usr/local/cuda-10.0/lib64/
-usrname@hostname:~/curr_path$ sudo cp cuda/include/* /usr/local/cuda-10.0/include/
-usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.0/lib64/libcudnn*
-usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.0/include/cudnn.h
+usrname@hostname:~/curr_path$ tar xzvf cudnn-10.1-linux-x64-v7.6.5.32.tgz
+usrname@hostname:~/curr_path$ sudo cp cuda/lib64/* /usr/local/cuda-10.1/lib64/
+usrname@hostname:~/curr_path$ sudo cp cuda/include/* /usr/local/cuda-10.1/include/
+usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.1/lib64/libcudnn*
+usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.1/include/cudnn.h
 ```
 
 C. Check the installed cuDNN version.<br />
@@ -290,12 +322,12 @@ C. Check the installed cuDNN version.<br />
 usrname@hostname:~/curr_path$ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 ```bash
-    #define CUDNN_MAJOR      7
-    #define CUDNN_MINOR      4
-    #define CUDNN_PATCHLEVEL 2
+    #define CUDNN_MAJOR 7
+    #define CUDNN_MINOR 6
+    #define CUDNN_PATCHLEVEL 5
     --
-    #define CUDNN_VERSION    (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
-    
+    #define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
     #include "driver_types.h"
 ```
 
@@ -305,7 +337,35 @@ usrname@hostname:~/curr_path$ sudo apt-get install libcupti-dev
 ```
 
 
-## 10. How to install and use an pip3 and virtualenv <a name="pip3_virtualenv"></a>
+## 10. How to install python 3.7 <a name="python3.7"></a>
+A. Install the python3.7.<br />
+```bash
+usrname@hostname:~/curr_path$ sudo apt-get update
+usrname@hostname:~/curr_path$ sudo apt-get install software-properties-common
+usrname@hostname:~/curr_path$ sudo add-apt-repository ppa:deadsnakes/ppa
+usrname@hostname:~/curr_path$ (ENTER)
+usrname@hostname:~/curr_path$ sudo apt-get install python3.7
+```
+
+C. Check the installed python3.7 version.<br />
+```bash
+usrname@hostname:~/curr_path$ python3.7 --version
+```
+```bash
+    Python 3.7.6
+```
+```bash
+usrname@hostname:~/curr_path$ python3.7
+```
+```bash
+    Python 3.7.6 (default, Dec 19 2019, 23:50:13) 
+    [GCC 7.4.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+
+```
+
+
+## 11. How to install and use pip, pip3 and virtualenv <a name="pip_virtualenv"></a>
 A. Check the pip (pip3) and virtualenv usages with reference to the websites,
 <a href="https://pip.pypa.io/en/stable/" title="Pip3">
 pip3
@@ -320,12 +380,19 @@ virtualenv2
 </a>
 .<br />
 
-B. Install the pip3.<br />
+B. Install the pip and pip3.<br />
 ```bash
+usrname@hostname:~/curr_path$ sudo apt-get install python-pip
 usrname@hostname:~/curr_path$ sudo apt-get install python3-pip
 ```
 
-C. Check the installed pip3 version.<br />
+C. Check the installed pip and pip3 version.<br />
+```bash
+usrname@hostname:~/curr_path$ pip --version
+```
+```bash
+    pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+```
 ```bash
 usrname@hostname:~/curr_path$ pip3 --version
 ```
@@ -335,11 +402,12 @@ usrname@hostname:~/curr_path$ pip3 --version
 
 D. Install the virtualenv.<br />
 ```bash
-usrname@hostname:~/curr_path$ pip3 install virtualenv
+# usrname@hostname:~/curr_path$ pip3 install virtualenv # This command causes a permission issue on the Ubuntu 18.04.
+# usrname@hostname:~/curr_path$ sudo pip install virtualenv # You must install the virtualenv as root using the pip, not the pip3.
 ```
 ```bash
     Installing collected packages: virtualenv
-    Successfully installed virtualenv-16.4.3
+    Successfully installed virtualenv-16.7.9
 ```
 
 E. Check the installed virtualenv version.<br />
@@ -347,7 +415,7 @@ E. Check the installed virtualenv version.<br />
 usrname@hostname:~/curr_path$ virtualenv --version
 ```
 ```bash
-    16.4.3
+    16.7.9
 ```
 
 F. Create a virtualenv for python 3.7 with pip3.<br />
@@ -398,7 +466,7 @@ L. Install packages from the exported pip3 package list.<br />
 ```
 
 
-## 11. How to install and use an Anaconda <a name="conda"></a>
+## 12. How to install and use an Anaconda <a name="conda"></a>
 A. Download an Anaconda with reference to the website,
 <a href="https://www.anaconda.com/download/#linux" title="Anaconda">
 Anaconda
@@ -515,7 +583,7 @@ usrname@hostname:~/curr_path$ conda conda_new create -f exported_env.yml
 ```
 
 
-## 12. How to install a PyTorch <a name="pytorch"></a>
+## 13. How to install a PyTorch <a name="pytorch"></a>
 A. Check a PyTorch version with reference to the website,
 <a href="https://pytorch.org" title="PyTorch">
 PyTorch
@@ -523,21 +591,23 @@ PyTorch
 .<br />
 
 B. Install the PyTorch where user want to install it.<br />
-&nbsp; &nbsp; The name of conda virtual environment where user want to install the PyTorch: conda_pytorch<br />
+&nbsp; &nbsp; The name of virtualenv where user want to install the PyTorch: virenv_pytorch<br />
 ```bash
-usrname@hostname:~/curr_path$ conda activate conda_pytorch
-(conda_pytorch) usrname@hostname:~/curr_path$ conda install pytorch torchvision cuda100 -c pytorch
+usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_pytorch/bin/activate
+(virenv_pytorch) usrname@hostname:~/curr_path$ pip3 install torch torchvision
 ```
 
 C. Make sure the PyTorch is installed correctly. <br />
 ```bash
-(conda_pytorch) usrname@hostname:~/curr_path$ python
-Python 3.7.1 (default, Dec 14 2018, 19:28:38) 
-[GCC 7.3.0] :: Anaconda, Inc. on linux
+(virenv_pytorch) usrname@hostname:~/curr_path$ python3
+Python 3.7.6 (default, Dec 19 2019, 23:50:13) 
+[GCC 7.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 ```
 ```python
 >>> import torch
+>>> torch.__version__
+'1.4.0'
 >>> torch.cuda.is_available()
 True
 >>> torch.cuda.get_device_name(0)
@@ -553,7 +623,7 @@ tensor([0.4732, 0.1292, 0.7363, 0.6000, 0.2162], device='cuda:0')
 ```
 
 
-## 13. How to install a TensorFlow <a name="tensorflow"></a>
+## 14. How to install a TensorFlow <a name="tensorflow"></a>
 A. Check a TensorFlow version with reference to the website,
 <a href="https://www.tensorflow.org" title="TensorFlow">
 TensorFlow
@@ -568,7 +638,7 @@ usrname@hostname:~/curr_path$ conda activate conda_tf
 ```
 
 
-## 14. How to set an Pycharm environment <a name="pycharm"></a>
+## 15. How to set an Pycharm environment <a name="pycharm"></a>
 A. Download a Pycharm which is a kind of Python IDEs with reference to the website,
 <a href="https://www.jetbrains.com/pycharm/download/#section=linux" title="Pycharm">
 Pycharm
@@ -596,7 +666,7 @@ E. How to set a project interpreter.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/13_Pycharm/2.png" width="80%"/><br />
 
 
-## 15. Others <a name="others"></a>
+## 16. Others <a name="others"></a>
 A. How to fix NTFS disk write-protect.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo ntfsfix /dev/sdb1
