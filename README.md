@@ -616,9 +616,9 @@ True
 1
 >>> a = torch.rand(5)
 >>> b = a.cuda()
->>> a
+>>> print(a)
 tensor([0.4732, 0.1292, 0.7363, 0.6000, 0.2162])
->>> b
+>>> print(b)
 tensor([0.4732, 0.1292, 0.7363, 0.6000, 0.2162], device='cuda:0')
 ```
 
@@ -636,6 +636,9 @@ B. Install the TensorFlow where user want to install it.<br />
 usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_tf/bin/activate
 (virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow
 (virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow-gpu
+# The final version of TensorFlow 1.x:
+(virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow==1.15
+(virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow-gpu==1.15
 ```
 
 C. Make sure the TensorFlow is installed correctly. <br />
