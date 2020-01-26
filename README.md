@@ -631,10 +631,38 @@ TensorFlow
 .<br />
 
 B. Install the TensorFlow where user want to install it.<br />
-&nbsp; &nbsp; The name of conda virtual environment where user want to install the TensorFlow: conda_tf<br />
+&nbsp; &nbsp; The name of virtualenv where user want to install the TensorFlow: virenv_tf<br />
 ```bash
-usrname@hostname:~/curr_path$ conda activate conda_tf
-(conda_tf) usrname@hostname:~/curr_path$ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.12.0-cp36-cp36m-linux_x86_64.whl
+usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_tf/bin/activate
+(virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow
+(virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow-gpu
+```
+
+C. Make sure the TensorFlow is installed correctly. <br />
+```bash
+(virenv_tf) usrname@hostname:~/curr_path$ python3
+Python 3.7.6 (default, Dec 19 2019, 23:50:13) 
+[GCC 7.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+```
+```python
+>>> import tensorflow as tf
+2020-01-27 02:02:39.640297: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] ~ please make sure the missing libraries mentioned above are installed properly.
+>>> tf.__version__
+'2.1.0'
+>>> tf.test.is_gpu_available()
+WARNING:tensorflow:From <stdin>:1: is_gpu_available ~ GPU (device: 0, name: TITAN Xp, pci bus id: 0000:01:00.0, compute capability: 6.1)
+True
+>>> tf.debugging.set_log_device_placement(True)
+>>> a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
+>>> b = tf.constant([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])
+>>> c = tf.matmul(a, b)
+2020-01-27 02:09:26.019321: I tensorflow/core/common_runtime/eager/execute.cc:573] Executing op MatMul in device /job:localhost/replica:0/task:0/device:GPU:0
+2020-01-27 02:09:26.019559: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+>>> print(c)
+tf.Tensor(
+[[22. 28.]
+ [49. 64.]], shape=(2, 2), dtype=float32)
 ```
 
 
