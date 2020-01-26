@@ -36,8 +36,8 @@ B. Select a fcitx option for a keyboard input method system.<br />
 &nbsp; &nbsp; Note that the fcitx option is valid when rerunning the program.<br /> 
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/1.png" width="80%"/><br />
 C. Logout and login<br />
-D. Click the keyboard icon in the upper right corner of the desktop
-E. Add input method (e.g. Hangul)<br />
+D. Click the keyboard icon in the upper right corner of the desktop.<br />
+E. Add input method (e.g. Hangul).<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/2.png" width="80%"/><br />
 F. Set an input method configuration.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/3.png" width="80%"/><br />
@@ -150,7 +150,7 @@ CUDA toolkit archive
 NVIDIA CUDA Installation Guide for Linux
 </a>
 .<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/8_CUDA_toolkit/1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/8_CUDA_toolkit/10.1.png" width="80%"/><br />
 
 B. Install the CUDA toolkit which user selects.<br />
 ```bash
@@ -306,7 +306,7 @@ cuDNN
 cuDNN archive
 </a>
 .<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/9_cuDNN/1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/9_cuDNN/7.6.5.png" width="80%"/><br />
 
 B. Install the downloaded cuDNN.<br />
 ```bash
