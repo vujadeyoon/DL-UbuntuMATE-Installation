@@ -403,7 +403,7 @@ usrname@hostname:~/curr_path$ pip3 --version
 D. Install the virtualenv.<br />
 ```bash
 # usrname@hostname:~/curr_path$ pip3 install virtualenv # This command causes a permission issue on the Ubuntu 18.04.
-# usrname@hostname:~/curr_path$ sudo pip install virtualenv # You must install the virtualenv as root using the pip, not the pip3.
+usrname@hostname:~/curr_path$ sudo pip install virtualenv # You must install the virtualenv as root using the pip, not the pip3.
 ```
 ```bash
     Installing collected packages: virtualenv
