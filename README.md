@@ -637,8 +637,8 @@ usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_tf/bin
 (virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow
 (virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow-gpu
 # The final version of TensorFlow 1.x:
-(virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow==1.15
-(virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow-gpu==1.15
+# (virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow==1.15
+# (virenv_tf) usrname@hostname:~/curr_path$ pip3 install tensorflow-gpu==1.15
 ```
 
 C. Make sure the TensorFlow is installed correctly. <br />
