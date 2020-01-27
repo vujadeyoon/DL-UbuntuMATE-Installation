@@ -1,6 +1,7 @@
 # Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - I recommend that you should ignore the commented instructions with an octothorpe, #.
+- Modified date: January 27, 2020.
 
 ## Table of contents
 0.  [Summarized environments about the DL-UbuntuMATE18.04LTS-Installation](#envs)
@@ -366,7 +367,7 @@ usrname@hostname:~/curr_path$ python3.7
 
 
 ## 11. How to install and use pip, pip3 and virtualenv <a name="pip_virtualenv"></a>
-A. Check the pip (pip3) and virtualenv usages with reference to the websites,
+A. Check the pip, pip3 and virtualenv usages with reference to the websites,
 <a href="https://pip.pypa.io/en/stable/" title="Pip3">
 pip3
 </a>
