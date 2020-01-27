@@ -45,11 +45,17 @@ F. Set an input method configuration.<br />
 
 
 ## 2. How to remove the Firefox browser and install the Opera browser <a name="ib"></a>
-A. Remove the Firefox browser.<br />
+A. Reference to the website,
+<a href="https://www.opera.com" title="Opera">
+Opera
+</a>
+.<br />
+
+B. Remove the Firefox browser.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get remove --purge firefox
 ```
-B. Install the Opera browser using a package installer.<br />
+C. Install the Opera browser using a package installer after downloading it.<br />
 
 
 ## 3. How to install a gedit <a name="gedit"></a>
