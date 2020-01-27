@@ -37,7 +37,7 @@ B. Select a fcitx option for a keyboard input method system.<br />
 &nbsp; &nbsp; Note that the fcitx option is valid when rerunning the program.<br /> 
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/1.png" width="80%"/><br />
 C. Logout and login<br />
-D. Click the keyboard icon in the upper right corner of the desktop.<br />
+D. Click the configure tab of a keyboard icon in the upper right corner of the desktop.<br />
 E. Add input method (e.g. Hangul).<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/2.png" width="80%"/><br />
 F. Set an input method configuration.<br />
