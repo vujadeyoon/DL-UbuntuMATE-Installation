@@ -648,7 +648,7 @@ Python 3.7.6 (default, Dec 19 2019, 23:50:13)
 [GCC 7.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 ```
-```python
+```python3
 >>> import tensorflow as tf
 2020-01-27 02:02:39.640297: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] ~ please make sure the missing libraries mentioned above are installed properly.
 >>> tf.__version__
