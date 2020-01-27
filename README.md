@@ -676,7 +676,7 @@ tf.Tensor(
 ```
 
 
-## 15. How to set an Pycharm environment <a name="pycharm"></a>
+## 15. How to set a Pycharm environment <a name="pycharm"></a>
 A. Download a Pycharm which is a kind of Python IDEs with reference to the website,
 <a href="https://www.jetbrains.com/pycharm/download/#section=linux" title="Pycharm">
 Pycharm
