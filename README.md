@@ -617,10 +617,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 '1.4.0'
 >>> torch.cuda.is_available()
 True
->>> torch.cuda.get_device_name(0)
-'TITAN Xp'
 >>> torch.cuda.device_count()
 1
+>>> torch.cuda.get_device_name(0)
+'TITAN Xp'
 >>> a = torch.rand(5)
 >>> b = a.cuda()
 >>> print(a)
