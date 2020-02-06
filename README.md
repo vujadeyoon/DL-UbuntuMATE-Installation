@@ -621,8 +621,11 @@ True
 1
 >>> torch.cuda.get_device_name(0)
 'TITAN Xp'
+>>> device = torch.device('cuda' if cuda else 'cpu')
+>>> print(str(device))
+'cuda'
 >>> a = torch.rand(5)
->>> b = a.cuda()
+>>> b = a.to(device)
 >>> print(a)
 tensor([0.4732, 0.1292, 0.7363, 0.6000, 0.2162])
 >>> print(b)
