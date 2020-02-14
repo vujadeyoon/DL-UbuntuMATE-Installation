@@ -513,6 +513,7 @@ usrname@hostname:~/curr_path$ source /home/sjyoon1671/anaconda3/bin/activate
 (base) usrname@hostname:~/curr_path$ conda init
 ```
 ```bash
+usrname@hostname:~/curr_path$ cat ~/.bashrc
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/usrname/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
