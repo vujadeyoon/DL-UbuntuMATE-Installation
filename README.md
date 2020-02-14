@@ -1,7 +1,7 @@
 # Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - I recommend that you should ignore the commented instructions with an octothorpe, #.
-- Modified date: January 27, 2020.
+- Modified date: Feb. 14, 2020.
 
 ## Table of contents
 0.  [Summarized environments about the DL-UbuntuMATE18.04LTS-Installation](#envs)
@@ -417,7 +417,7 @@ usrname@hostname:~/curr_path$ sudo pip install virtualenv # You must install the
     Successfully installed virtualenv-16.7.9
 ```
 
-E. Check the installed virtualenv version.<br />
+E. Check the installed version.<br />
 ```bash
 usrname@hostname:~/curr_path$ virtualenv --version
 ```
@@ -482,7 +482,7 @@ Anaconda
 
 B. Install the downloaded Anaconda.<br />
 ```bash
-usrname@hostname:~/curr_path$ bash Anaconda3-2018.12-Linux-x86_64.sh
+usrname@hostname:~/curr_path$ bash Anaconda3-2019.10-Linux-x86_64.sh
 ```
 ```bash
     Do you accept the license terms? [yes|no]
@@ -490,16 +490,44 @@ usrname@hostname:~/curr_path$ bash Anaconda3-2018.12-Linux-x86_64.sh
     Anaconda3 will now be installed into this location:
     /home/usrname/anaconda3
     [/home/usrname/anaconda3] >>> (ENTER)
-    Do you wish the installer to prepend the Anaconda3 install location
-    to PATH in your /home/usrname/.bashrc ? [yes|no]
-    [no] >>> (yes)
-    Do you wish to proceed with the installation of Microsoft VSCode? [yes|no]
-    >>> (no)
+    Do you wish the installer to initialize Anaconda3 by running conda init? [yes|no]
+    [no] >>> (no)
 ```
 ```bash
 usrname@hostname:~/curr_path$ source ~/.bashrc
 ```
-
+* Please note that the official Anaconda installation guide recommend that the installer initializes the Anaconda3 by running conda init while installing it. However, I recommend that you type no for the last question in installation process, because the the conda init modify the file, ~/.bashrc, then a terminal always activates a base conda virtual envrionment as below.
+```bash
+(base) usrname@hostname:~/curr_path$ bash Anaconda3-2019.10-Linux-x86_64.sh
+```
+* It enable the terminal to call any conda command easliy, but the automatically activated conda virtual envrionment, base, is redundant if you use the virtualenv that I mentioned in the section 11.
+* Thus, after installing the Anaconda3 without initializing the conda, you can activate the conda virtual environment, base, as below.
+```bash
+usrname@hostname:~/curr_path$ source /home/sjyoon1671/anaconda3/bin/activate
+```
+```bash
+(base) usrname@hostname:~/curr_path$
+```
+* If you want to initializing the conda after installing it without initializing process,you run a command, conda init, after activating the base conda virtual environment. It can modify the file, ~/.bashrc. Please refer to below information. 
+```bash
+(base) usrname@hostname:~/curr_path$ conda init
+```
+```bash
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/usrname/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/usrname/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/usrname/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/usrname/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
 <details>
     <summary>C. (Option) Update the Anaconda.</summary>
     
@@ -510,17 +538,23 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
         
 </details>conda envrionments
 
-D. Check the installed conda version.<br />
+
+D. Uninstall the Anaconda.<br />
 ```bash
-usrname@hostname:~/curr_path$ conda --version
+usrname@hostname:~/curr_path$ rm -rf ~/anaconda3
+```
+
+E. Check the installed conda version.<br />
+```bash
+(base) usrname@hostname:~/curr_path$ conda --version
 ```
 ```bash
     conda 4.5.12
 ```
 
-E. Check the conda envrionments.<br />
+F. Check the conda envrionments.<br />
 ```bash
-usrname@hostname:~/curr_path$ conda info --envs
+(base) usrname@hostname:~/curr_path$ conda info --envs
 ```
 ```bash
     # conda environments:
@@ -529,44 +563,44 @@ usrname@hostname:~/curr_path$ conda info --envs
     
 ```
 
-F. Create a conda virtual environments for python 3.7 with conda.<br />
+G. Create a conda virtual environments for python 3.7 with conda.<br />
 &nbsp; &nbsp; The name of new conda virtual environment to be created: conda_dl<br />
 ```
-usrname@hostname:~/curr_path$ conda create --name conda_dl python=3.7
+(base) usrname@hostname:~/curr_path$ conda create --name conda_dl python=3.7
 ```
 
-G. Clone a conda virtual environment.<br />
+H. Clone a conda virtual environment.<br />
 &nbsp; &nbsp; The name of new conda virtual environment to be cloned: conda_pytorch<br />
 &nbsp; &nbsp; The name of existed conda virtual environment: conda_dl<br />
 ```bash
-usrname@hostname:~/curr_path$ conda create --name conda_pytorch --clone conda_dl
+(base) usrname@hostname:~/curr_path$ conda create --name conda_pytorch --clone conda_dl
 ```
 
-H. Activate a conda virtual environment.<br />
+I. Activate a conda virtual environment.<br />
 &nbsp; &nbsp; The name of conda virtual environment to be activated: conda_pytorch<br />
 ```bash
-usrname@hostname:~/curr_path$ conda activate conda_pytorch
+(base) usrname@hostname:~/curr_path$ conda activate conda_pytorch
 ```
 
-I. Deactivate a conda virtual environment.<br />
+J. Deactivate a conda virtual environment.<br />
 &nbsp; &nbsp; The name of conda virtual environment to be deactivated: conda_pytorch<br />
 ```bash
 (conda_pytorch) usrname@hostname:~/curr_path$ conda deactivate
 ```
 
-J. Remove a conda virtual environment.<br />
+K. Remove a conda virtual environment.<br />
 &nbsp; &nbsp; The name of conda virtual environment to be removed: conda_dl<br />
 ```bash
-usrname@hostname:~/curr_path$ conda remove --name conda_dl --all
+(base) usrname@hostname:~/curr_path$ conda remove --name conda_dl --all
 ```
 
-K. Export a conda package list.<br />
+L. Export a conda package list.<br />
 &nbsp; &nbsp; The name of activated conda virtual environment: conda_pytorch<br />
 ```bash
 (conda_pytorch) usrname@hostname:~/curr_path$ conda list -e > requirements.txt
 ```
 
-L. Install packages from the exported conda package list.<br />
+M. Install packages from the exported conda package list.<br />
 &nbsp; &nbsp; The name of activated conda virtual environment: conda_new<br />
 ```bash
 (conda_new) usrname@hostname:~/curr_path$ conda install --yes --file requirements.txt # does not automatically install all the dependencies
@@ -575,18 +609,18 @@ L. Install packages from the exported conda package list.<br />
 (conda_new) usrname@hostname:~/curr_path$ while read requirement; do conda install --yes $requirement; done < requirements.txt # automatically install all the dependencies
 ```
 
-M. Export a conda virtual envrionment.<br />
+N. Export a conda virtual envrionment.<br />
 &nbsp; &nbsp; The name of conda virtual environment to be exported: conda_pytorch<br />
 &nbsp; &nbsp; The name of exported file: exported_env.yml<br />
 ```bash
-usrname@hostname:~/curr_path$ conda conda_pytorch export > exported_env.yml
+(base) usrname@hostname:~/curr_path$ conda conda_pytorch export > exported_env.yml
 ```
 
-N. Create a conda virtual environment with the exported conda virtual environment.<br />
+O. Create a conda virtual environment with the exported conda virtual environment.<br />
 &nbsp; &nbsp; The name of new conda virtual environment to be created: conda_new<br />
 &nbsp; &nbsp; The name of exported file: exported_env.yml<br />
 ```bash
-usrname@hostname:~/curr_path$ conda conda_new create -f exported_env.yml
+(base) usrname@hostname:~/curr_path$ conda conda_new create -f exported_env.yml
 ```
 
 
