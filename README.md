@@ -536,7 +536,7 @@ unset __conda_setup
         The following packages will be UPDATED:
         Proceed ([y]/n)? (y)
         
-</details>conda envrionments
+</details>
 
 
 D. Uninstall the Anaconda.<br />
