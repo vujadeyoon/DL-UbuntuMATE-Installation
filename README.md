@@ -506,7 +506,7 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
 usrname@hostname:~/curr_path$ source /home/usrname/anaconda3/bin/activate
 (base) usrname@hostname:~/curr_path$ 
 ```
-* If you want to initialize the conda after installing it without initializing process,you run a command, conda init, after activating the base conda virtual environment. It can modify the file, ~/.bashrc. Please refer to below information. 
+* If you want to initialize the conda after installing it without initializing process, you run a command, conda init, after activating the base conda virtual environment. It can modify the file, ~/.bashrc. Please refer to below information. 
 ```bash
 (base) usrname@hostname:~/curr_path$ conda init
 ```
