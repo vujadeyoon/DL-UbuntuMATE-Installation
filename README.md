@@ -501,7 +501,7 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
 (base) usrname@hostname:~/curr_path$ bash Anaconda3-2019.10-Linux-x86_64.sh
 ```
 * It enables the terminal to call any conda command easliy, but the automatically activated conda virtual envrionment, base, is redundant if you use the virtualenv that I mentioned in the section 11.
-* Thus, after installing the Anaconda3 without initializing the conda, you can activate the conda virtual environment, base, as below.
+* Thus, after installing the Anaconda3 without initializing the conda, you should activate the conda virtual environment, base to use conda virtual environment correctly as below.
 ```bash
 (base) usrname@hostname:~/curr_path$
 ```
