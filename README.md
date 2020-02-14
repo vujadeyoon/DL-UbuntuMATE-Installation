@@ -503,9 +503,6 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
 * It enables the terminal to call any conda command easliy, but the automatically activated conda virtual envrionment, base, is redundant if you use the virtualenv that I mentioned in the section 11.
 * Thus, after installing the Anaconda3 without initializing the conda, you can activate the conda virtual environment, base, as below.
 ```bash
-usrname@hostname:~/curr_path$ source /home/sjyoon1671/anaconda3/bin/activate
-```
-```bash
 (base) usrname@hostname:~/curr_path$
 ```
 * If you want to initializing the conda after installing it without initializing process,you run a command, conda init, after activating the base conda virtual environment. It can modify the file, ~/.bashrc. Please refer to below information. 
