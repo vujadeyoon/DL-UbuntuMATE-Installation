@@ -498,12 +498,13 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
 ```
 * Please note that the official Anaconda installation guide recommends that the installer initialize the Anaconda3 by running conda init while installing it. However, I recommend that you type no for the last question in installation process, because the command, conda init, modifies the file, ~/.bashrc, then a terminal always activates a base conda virtual envrionment as below.
 ```bash
-(base) usrname@hostname:~/curr_path$ bash Anaconda3-2019.10-Linux-x86_64.sh
+(base) usrname@hostname:~/curr_path$
 ```
 * It enables the terminal to call any conda command easliy, but the automatically activated conda virtual envrionment, base, is redundant if you use the virtualenv that I mentioned in the section 11.
 * Thus, after installing the Anaconda3 without initializing the conda, you should activate the conda virtual environment, base to use conda virtual environment correctly as below.
 ```bash
-(base) usrname@hostname:~/curr_path$ source /home/usrname/anaconda3/bin/activate
+usrname@hostname:~/curr_path$ source /home/usrname/anaconda3/bin/activate
+(base) usrname@hostname:~/curr_path$ 
 ```
 * If you want to initializing the conda after installing it without initializing process,you run a command, conda init, after activating the base conda virtual environment. It can modify the file, ~/.bashrc. Please refer to below information. 
 ```bash
