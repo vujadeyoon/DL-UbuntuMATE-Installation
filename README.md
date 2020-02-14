@@ -529,7 +529,7 @@ unset __conda_setup
 <details>
     <summary>C. (Option) Update the Anaconda.</summary>
     
-    usrname@hostname:~/curr_path$ conda update conda
+    (base) usrname@hostname:~/curr_path$ conda update conda
     
         The following packages will be UPDATED:
         Proceed ([y]/n)? (y)
