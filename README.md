@@ -654,7 +654,7 @@ True
 1
 >>> torch.cuda.get_device_name(0)
 'TITAN Xp'
->>> device = torch.device('cuda' if cuda else 'cpu')
+>>> device = torch.device('cuda')
 >>> print(str(device))
 'cuda'
 >>> a = torch.rand(5)
