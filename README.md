@@ -510,7 +510,7 @@ usrname@hostname:~/curr_path$ source ~/.bashrc
 (base) usrname@hostname:~/curr_path$ conda init
 ```
 ```bash
-usrname@hostname:~/curr_path$ cat ~/.bashrc
+(base) usrname@hostname:~/curr_path$ cat ~/.bashrc
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/usrname/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -547,7 +547,7 @@ E. Check the installed conda version.<br />
 (base) usrname@hostname:~/curr_path$ conda --version
 ```
 ```bash
-    conda 4.5.12
+    conda 4.7.12
 ```
 
 F. Check the conda envrionments.<br />
