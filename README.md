@@ -496,7 +496,7 @@ usrname@hostname:~/curr_path$ bash Anaconda3-2019.10-Linux-x86_64.sh
 ```bash
 usrname@hostname:~/curr_path$ source ~/.bashrc
 ```
-* Please note that the official Anaconda installation guide recommend that the installer initializes the Anaconda3 by running conda init while installing it. However, I recommend that you type no for the last question in installation process, because the the conda init modify the file, ~/.bashrc, then a terminal always activates a base conda virtual envrionment as below.
+* Please note that the official Anaconda installation guide recommends that the installer initialize the Anaconda3 by running conda init while installing it. However, I recommend that you type no for the last question in installation process, because the the conda init modify the file, ~/.bashrc, then a terminal always activates a base conda virtual envrionment as below.
 ```bash
 (base) usrname@hostname:~/curr_path$ bash Anaconda3-2019.10-Linux-x86_64.sh
 ```
