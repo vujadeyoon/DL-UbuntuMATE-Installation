@@ -275,7 +275,7 @@ E. Make sure that CUDA path and LD_LIBRARY_path.<br />
 ```bash
 usrname@hostname:~/curr_path$ echo -e "\n## CUDA and cuDNN paths"  >> ~/.bashrc
 usrname@hostname:~/curr_path$ echo 'export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}' >> ~/.bashrc
-usrname@hostname:~/curr_path$ echo echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+usrname@hostname:~/curr_path$ echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 usrname@hostname:~/curr_path$ source ~/.bashrc
 usrname@hostname:~/curr_path$ sudo reboot
 ```
