@@ -298,8 +298,10 @@ usrname@hostname:~/curr_path$ which nvcc
 ```
 
 G. Uninstall the installed CUDA toolkit.<br />
+- You should select a option between two options below.
 ```bash
-usrname@hostname:~/curr_path$ sudo ./usr/local/cuda-10.1/bin/uninstall_cuda_10.1.pl
+usrname@hostname:~/curr_path$ sudo /usr/local/cuda-10.1/bin/uninstall_cuda_10.1.pl
+usrname@hostname:~/curr_path$ sudo /usr/local/cuda-10.1/bin/cuda-uninstaller
 ```
 
 
