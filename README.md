@@ -920,4 +920,9 @@ A. How to fix NTFS disk write-protect.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo ntfsfix /dev/sdb1
 ```
-
+B. How to install citrix.<br />
+- Download and install the citrix recevier (e.g. Citrix Receiver 13.10 for Linux) for Debian Packages (i.e. Full Packages (Self-Service Support)).
+- Then copy some certification files to the Citrix directory.
+```bash
+usrname@hostname:~/curr_path$ sudo cp -r /etc/ssl/certs/* /opt/Citrix/ICAClient/keystore/cacerts/
+```
