@@ -14,7 +14,7 @@
 7.  [How to install a KolourPaint](#KolourPaint)
 8.  [How to install a Audacity](#Audacity)
 9.  [How to install and set a Remmina](#remmina)
-10.  [How to install and set both ssh and scp](#ssh_scp)
+10.  [How to install, uninstall and set both ssh and scp](#ssh_scp)
 11.  [How to enable a file system, exfat](#exfat)
 12.  [How to install a GPU driver](#gpu_driver)
 13.  [How to install a CUDA toolkit](#cuda_toolkit)
@@ -134,7 +134,7 @@ C. Set the Remmina remote desktope preference.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/4_Remmina/1.png" width="80%"/><br />
 
 
-## 10. How to install and set both ssh and scp <a name="ssh_scp"></a>
+## 10. How to install, uninstall and set both ssh and scp <a name="ssh_scp"></a>
 A. Install the ssh-server.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get install openssh-server
