@@ -478,7 +478,7 @@ usrname@hostname:~/curr_path$ (ENTER)
 usrname@hostname:~/curr_path$ sudo apt-get install python3.7
 ```
 
-C. Check the installed python3.7 version.<br />
+B. Check the installed python3.7 version.<br />
 ```bash
 usrname@hostname:~/curr_path$ python3.7 --version
 ```
