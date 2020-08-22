@@ -1,29 +1,33 @@
 # Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - I recommend that you should ignore the commented instructions with an octothorpe, #.
-- Modified date: Aug. 22, 2020.
+- Modified date: Aug. 23, 2020.
 
 ## Table of contents
 0.  [Summarized environments about the DL-UbuntuMATE18.04LTS-Installation](#envs)
 1.  [How to set an additional language](#language)
-2.  [How to remove the Firefox and install the Opera broweser](#ib)
-3.  [How to install a git](#git)
-4.  [How to install a gedit](#gedit)
-5.  [How to install and set a Remmina](#remmina)
-6.  [How to install and set both ssh and scp](#ssh_scp)
-7.  [How to enable a file system, exfat](#exfat)
-8.  [How to install a GPU driver](#gpu_driver)
-9.  [How to install a CUDA toolkit](#cuda_toolkit)
-10.  [How to install other CUDA toolkit](#cuda_toolkit_other)
-11.  [How to install a cuDNN](#cudnn)
-12.  [How to uninstall the GPU driver, CUDA toolkit and cuDNN](#uninstall_CUDAs)
-13. [How to install python 3.7](#python3.7)
-14. [How to install and use pip, pip3 and virtualenv](#pip_virtualenv)
-15. [How to install and use an Anaconda](#conda)
-16. [How to install a PyTorch](#pytorch)
-17. [How to install a TensorFlow](#tensorflow)
-18. [How to set an Pycharm environment](#pycharm)
-19. [Others](#others)
+2.  [How to remove the Firefox browser and install other browsers](#web_browser)
+3.  [How to install a editor, Atom](#Atom)
+4.  [How to install a editor, Remarkable](#Remarkable)
+5.  [How to install a git](#git)
+6.  [How to install a gedit](#gedit)
+7.  [How to install a KolourPaint](#KolourPaint)
+8.  [How to install a Audacity](#Audacity)
+9.  [How to install and set a Remmina](#remmina)
+10.  [How to install and set both ssh and scp](#ssh_scp)
+11.  [How to enable a file system, exfat](#exfat)
+12.  [How to install a GPU driver](#gpu_driver)
+13.  [How to install a CUDA toolkit](#cuda_toolkit)
+14.  [How to install other CUDA toolkit](#cuda_toolkit_other)
+15.  [How to install a cuDNN](#cudnn)
+16.  [How to uninstall the GPU driver, CUDA toolkit and cuDNN](#uninstall_CUDAs)
+17. [How to install python 3.7](#python3.7)
+18. [How to install and use pip, pip3 and virtualenv](#pip_virtualenv)
+19. [How to install and use an Anaconda](#conda)
+20. [How to install a PyTorch](#pytorch)
+21. [How to install a TensorFlow](#tensorflow)
+22. [How to set an Pycharm environment](#pycharm)
+23. [Others](#others)
 
 
 ## 0. Summarized environments about the DL-UbuntuMATE18.04LTS-Installation <a name="envs"></a>
@@ -50,34 +54,68 @@ F. Set an input method configuration.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/3.png" width="80%"/><br />
 
 
-## 2. How to remove the Firefox browser and install the Opera browser <a name="ib"></a>
+## 2. How to remove the Firefox browser and install other browsers <a name="web_browser"></a>
 A. Reference to the website,
 <a href="https://www.opera.com" title="Opera">
 Opera
+</a>,
+<a href="https://www.google.com/chrome">
+Google Chrome
 </a>.<br />
-
 B. Remove the Firefox browser.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get remove --purge firefox
 ```
-C. Install the Opera browser using a package installer after downloading it.<br />
+C. Install the Opera and Google Chrome browsers using the package installers after downloading them.<br />
 D. Install the Opera addons such as Nimbus Screen Capture and Google Translate.<br />
+E. Use the function key F11 when not moving the browsers.<br />
 
-## 3. How to install a git <a name="git"></a>
+
+## 3. How to install a editor, Atom <a name="Atom"></a>
+A. Reference to the website,
+<a href="https://atom.io" title="Atom">
+Atom
+</a>.<br />
+B. Install the Atom using a package installer after downloading it.<br />
+
+
+## 4. How to install a editor, Remarkable <a name="Remarkable"></a>
+A. Reference to the website,
+<a href="https://remarkableapp.github.io" title="Remarkable">
+Remarkable
+</a>.<br />
+B. Install the Remarkable using a package installer after downloading it.<br />
+
+
+## 5. How to install a git <a name="git"></a>
 A. Install the gedit.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get install git
 ```
 
 
-## 4. How to install a gedit <a name="gedit"></a>
+## 6. How to install a gedit <a name="gedit"></a>
 A. Install the gedit.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get install gedit
 ```
 
 
-## 5. How to install and set a Remmina <a name="remmina"></a>
+## 7. How to install a KolourPaint <a name="Kolourpaint"></a>
+A. Install the KolourPaint.<br />
+```bash
+usrname@hostname:~/curr_path$ sudo apt-get install kolourpaint4
+```
+
+
+## 8. How to install a Audacity <a name="Audacity"></a>
+A. Install the Audacity.<br />
+```bash
+usrname@hostname:~/curr_path$ sudo apt-get install audacity
+```
+
+
+## 9. How to install and set a Remmina <a name="remmina"></a>
 A. Reference to the website,
 <a href="https://remmina.org" title="Remmina">
 Remmina
@@ -92,7 +130,7 @@ C. Set the Remmina remote desktope preference.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/4_Remmina/1.png" width="80%"/><br />
 
 
-## 6. How to install and set both ssh and scp <a name="ssh_scp"></a>
+## 10. How to install and set both ssh and scp <a name="ssh_scp"></a>
 A. Install the ssh-server.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get install openssh-server
@@ -104,14 +142,14 @@ usrname@hostname:~/curr_path$ sudo apt-get remove --purge openssh-server
 ```
 
 
-## 7. How to enable a file system, exfat <a name="exfat"></a>
+## 11. How to enable a file system, exfat <a name="exfat"></a>
 A. Enable the exfat file system.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get install exfat-utils exfat-fuse
 ```
 
 
-## 8. How to install a GPU driver <a name="gpu_driver"></a>
+## 12. How to install a GPU driver <a name="gpu_driver"></a>
 A. Check a NVIDIA driver version with reference to the website,
 <a href="https://www.nvidia.com/Download/Find.aspx" title="NVIDIA driver">
 NVIDIA driver
@@ -151,7 +189,7 @@ usrname@hostname:~/curr_path$ nvidia-smi
 ```
 
 
-## 9. How to install a CUDA toolkit <a name="cuda_toolkit"></a>
+## 13. How to install a CUDA toolkit <a name="cuda_toolkit"></a>
 A. Download a CUDA toolkit with reference to the websites,
 <a href="https://developer.nvidia.com/cuda-downloads" title="CUDA toolkit">
 CUDA toolkit
@@ -303,7 +341,7 @@ usrname@hostname:~/curr_path$ which nvcc
 ```
 
 
-## 10. How to install other CUDA toolkit <a name="cuda_toolkit_other"></a>
+## 14. How to install other CUDA toolkit <a name="cuda_toolkit_other"></a>
 A. This is for cases where you need to use a different CUDA toolkit (e.g. cuda-10.1).<br />
 B. Install the CUDA toolkit which user selects.<br />
 ```bash
@@ -417,7 +455,7 @@ C. Ignore the below warning about incompleted installation.<br />
 ```
 
 
-## 11. How to install a cuDNN <a name="cudnn"></a>
+## 15. How to install a cuDNN <a name="cudnn"></a>
 A. Download a cuDNN (e.g. cuDNN v7.6.5 Library for Linux) with reference to the websites,
 <a href="https://developer.nvidia.com/rdp/cudnn-download" title="cuDNN">
 cuDNN
@@ -456,7 +494,7 @@ usrname@hostname:~/curr_path$ sudo apt-get install libcupti-dev
 ```
 
 
-## 12. How to uninstall the GPU driver, CUDA toolkit and cuDNN <a name="uninstall_CUDAs"></a>
+## 16. How to uninstall the GPU driver, CUDA toolkit and cuDNN <a name="uninstall_CUDAs"></a>
 A. uninstall the GPU driver, CUDA toolkit (e.g. cuda-10.2) and cuDNN.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo /usr/local/cuda-10.2/bin/cuda-uninstaller
@@ -467,8 +505,7 @@ usrname@hostname:~/curr_path$ sudo rm -rf /usr/local/cuda*
 ```
 
 
-
-## 13. How to install python 3.7 <a name="python3.7"></a>
+## 17. How to install python 3.7 <a name="python3.7"></a>
 A. Install the python3.7.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo apt-get update
@@ -496,7 +533,7 @@ usrname@hostname:~/curr_path$ python3.7
 ```
 
 
-## 14. How to install and use pip, pip3 and virtualenv <a name="pip_virtualenv"></a>
+## 18. How to install and use pip, pip3 and virtualenv <a name="pip_virtualenv"></a>
 A. Check the pip, pip3 and virtualenv usages with reference to the websites,
 <a href="https://pip.pypa.io/en/stable/" title="Pip3">
 pip3
@@ -596,7 +633,7 @@ L. Install packages from the exported pip3 package list.<br />
 ```
 
 
-## 15. How to install and use an Anaconda <a name="conda"></a>
+## 19. How to install and use an Anaconda <a name="conda"></a>
 A. Download an Anaconda with reference to the website,
 <a href="https://www.anaconda.com/download/#linux" title="Anaconda">
 Anaconda
@@ -745,7 +782,7 @@ O. Create a conda virtual environment with the exported conda virtual environmen
 ```
 
 
-## 16. How to install a PyTorch <a name="pytorch"></a>
+## 20. How to install a PyTorch <a name="pytorch"></a>
 A. Check a PyTorch version with reference to the website,
 <a href="https://pytorch.org" title="PyTorch">
 PyTorch
@@ -790,7 +827,7 @@ tensor([0.4732, 0.1292, 0.7363, 0.6000, 0.2162], device='cuda:0')
 ```
 
 
-## 17. How to install a TensorFlow <a name="tensorflow"></a>
+## 21. How to install a TensorFlow <a name="tensorflow"></a>
 A. Check a TensorFlow version with reference to the website,
 <a href="https://www.tensorflow.org" title="TensorFlow">
 TensorFlow
@@ -847,7 +884,7 @@ usrname@hostname:~/curr_path$ unset LD_LIBRARY_PATH
 ```
 
 
-## 18. How to set a Pycharm environment <a name="pycharm"></a>
+## 22. How to set a Pycharm environment <a name="pycharm"></a>
 A. Download a Pycharm which is a kind of Python IDEs with reference to the website,
 <a href="https://www.jetbrains.com/pycharm/download/#section=linux" title="Pycharm">
 Pycharm
@@ -874,7 +911,7 @@ E. How to set a project interpreter.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/13_Pycharm/2.png" width="80%"/><br />
 
 
-## 19. Others <a name="others"></a>
+## 23. Others <a name="others"></a>
 A. How to fix NTFS disk write-protect.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo ntfsfix /dev/sdb1
