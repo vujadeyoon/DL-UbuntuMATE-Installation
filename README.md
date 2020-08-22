@@ -39,6 +39,10 @@
     - CUDA-10.2 (default)
     - CUDA-10.1
 - cuDNN: cuDNN v7.6.5
+- PyTorch: 1.6.0
+- TensorFlow (TF): 2.3.0
+    - <=CUDA-10.1
+    - <= cuDNN v7.6.5
 
 
 ## 1. How to set an additional language <a name="language"></a>
