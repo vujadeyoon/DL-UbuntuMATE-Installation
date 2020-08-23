@@ -270,7 +270,7 @@ usrname@hostname:~/curr_path$ sudo ./cuda_10.2.89_440.33.01_linux.run --override
     ┌──────────────────────────────────────────────────────────────────────────────┐
     │ CUDA Installer                                                               │ 
     │ - [ ] Driver                                                                 │
-    │      [ ] 440.33.01                                                              │
+    │      [ ] 440.33.01                                                           │
     │ - [X] CUDA Toolkit 10.2                                                      │
     │    + [X] CUDA Tools 10.2                                                     │
     │    + [X] CUDA Libraries 10.2                                                 │
