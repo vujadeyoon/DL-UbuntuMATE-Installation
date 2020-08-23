@@ -799,6 +799,16 @@ usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_pytorc
 (virenv_pytorch) usrname@hostname:~/curr_path$ pip3 install torch torchvision
 ```
 
+C. Install other version of the PyTorch for older CUDA toolkit.<br />
+&nbsp; &nbsp; The name of virtualenv where user want to install the PyTorch: virenv_pytorch<br />
+&nbsp; &nbsp; The PyTorch version: 1.4.0<br />
+&nbsp; &nbsp; The Torchvision version: 1.4.0<br />
+&nbsp; &nbsp; The CUDA toolkit version: 10.0<br />
+```bash
+usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_pytorch/bin/activate
+(virenv_pytorch) usrname@hostname:~/curr_path$ pip3 install torch==1.4.0+cu100 torchvision==0.5.0+cu100 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
 C. Make sure the PyTorch is installed correctly. <br />
 ```bash
 (virenv_pytorch) usrname@hostname:~/curr_path$ python3
