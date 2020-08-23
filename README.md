@@ -808,7 +808,8 @@ C. Install other version of the PyTorch for older CUDA toolkit.<br />
 usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_pytorch/bin/activate
 (virenv_pytorch) usrname@hostname:~/curr_path$ pip3 install torch==1.4.0+cu100 torchvision==0.5.0+cu100 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-C. Make sure the PyTorch is installed correctly. <br />
+
+D. Make sure the PyTorch is installed correctly. <br />
 ```bash
 (virenv_pytorch) usrname@hostname:~/curr_path$ python3
 Python 3.7.9 (default, Aug 18 2020, 06:22:45)
