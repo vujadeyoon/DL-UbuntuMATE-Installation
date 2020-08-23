@@ -802,7 +802,7 @@ usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_pytorc
 C. Install other version of the PyTorch for older CUDA toolkit.<br />
 &nbsp; &nbsp; The name of virtualenv where user want to install the PyTorch: virenv_pytorch<br />
 &nbsp; &nbsp; The PyTorch version: 1.4.0<br />
-&nbsp; &nbsp; The Torchvision version: 1.4.0<br />
+&nbsp; &nbsp; The Torchvision version: 0.5.0<br />
 &nbsp; &nbsp; The CUDA toolkit version: 10.0<br />
 ```bash
 usrname@hostname:~/curr_path$ source /home/usrname/pip3_virtualenv/virenv_pytorch/bin/activate
