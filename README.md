@@ -18,16 +18,17 @@
 11.  [How to enable a file system, exfat](#exfat)
 12.  [How to install a GPU driver](#gpu_driver)
 13.  [How to install a CUDA toolkit](#cuda_toolkit)
-14.  [How to install other CUDA toolkit](#cuda_toolkit_other)
-15.  [How to install a cuDNN](#cudnn)
+14.  [How to install a cuDNN](#cudnn)
+15.  [How to install other CUDA toolkit with cuDNN](#cuda_toolkit_cuDNN_other)
 16.  [How to uninstall the GPU driver, CUDA toolkit and cuDNN](#uninstall_CUDAs)
 17. [How to install python 3.7](#python3.7)
 18. [How to install and use pip, pip3 and virtualenv](#pip_virtualenv)
 19. [How to install and use an Anaconda](#conda)
 20. [How to install a PyTorch](#pytorch)
 21. [How to install a TensorFlow](#tensorflow)
-22. [How to set an Pycharm environment](#pycharm)
-23. [Others](#others)
+22. [How to install a TensorRT and Torch2TRT](#tensorrt_torch2trt)
+23. [How to set an Pycharm environment](#pycharm)
+24. [Others](#others)
 
 
 ## 0. Summarized environments about the DL-UbuntuMATE18.04LTS-Installation <a name="envs"></a>
@@ -345,8 +346,47 @@ usrname@hostname:~/curr_path$ which nvcc
 ```
 
 
-## 14. How to install other CUDA toolkit <a name="cuda_toolkit_other"></a>
-A. This is for cases where you need to use a different CUDA toolkit (e.g. cuda-10.1).<br />
+## 14. How to install a cuDNN <a name="cudnn"></a>
+A. Download a cuDNN (e.g. cuDNN v7.6.5 Library for Linux) with reference to the websites,
+<a href="https://developer.nvidia.com/rdp/cudnn-download" title="cuDNN">
+cuDNN
+</a>, 
+<a href="https://developer.nvidia.com/rdp/cudnn-archive" title="cuDNN archive">
+cuDNN archive
+</a>.<br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/9_cuDNN/7.6.5.png" width="80%"/><br />
+
+B. Install the downloaded cuDNN.<br />
+```bash
+usrname@hostname:~/curr_path$ tar xzvf cudnn-10.2-linux-x64-v7.6.5.32.tgz
+usrname@hostname:~/curr_path$ sudo cp cuda/lib64/* /usr/local/cuda-10.2/lib64/
+usrname@hostname:~/curr_path$ sudo cp cuda/include/* /usr/local/cuda-10.2/include/
+usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.2/lib64/libcudnn*
+usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.2/include/cudnn.h
+```
+
+C. Check the installed cuDNN version.<br />
+```bash
+usrname@hostname:~/curr_path$ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+```
+```bash
+    #define CUDNN_MAJOR 7
+    #define CUDNN_MINOR 6
+    #define CUDNN_PATCHLEVEL 5
+    --
+    #define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
+    #include "driver_types.h"
+```
+
+D. Install the NVIDIA CUDA profiler tools interface.<br />
+```bash
+usrname@hostname:~/curr_path$ sudo apt-get install libcupti-dev
+```
+
+
+## 15. How to install other CUDA toolkit with cuDNN <a name="cuda_toolkit_cuDNN_other"></a>
+A. This is for cases where you need to use a different CUDA toolkit (e.g. cuda-10.1) with cuDNN (e.g. cudnn-10.1-linux-x64-v7.6.5.32.tgz).<br />
 B. Install the CUDA toolkit which user selects.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo chmod +x cuda_10.1.105_418.39_linux.run
@@ -458,29 +498,18 @@ C. Ignore the below warning about incompleted installation.<br />
     Logfile is /var/log/cuda-installer.log
 ```
 
-
-## 15. How to install a cuDNN <a name="cudnn"></a>
-A. Download a cuDNN (e.g. cuDNN v7.6.5 Library for Linux) with reference to the websites,
-<a href="https://developer.nvidia.com/rdp/cudnn-download" title="cuDNN">
-cuDNN
-</a>, 
-<a href="https://developer.nvidia.com/rdp/cudnn-archive" title="cuDNN archive">
-cuDNN archive
-</a>.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/9_cuDNN/7.6.5.png" width="80%"/><br />
-
-B. Install the downloaded cuDNN.<br />
+D. Install the cuDNN which user selects.<br />
 ```bash
-usrname@hostname:~/curr_path$ tar xzvf cudnn-10.2-linux-x64-v7.6.5.32.tgz
-usrname@hostname:~/curr_path$ sudo cp cuda/lib64/* /usr/local/cuda-10.2/lib64/
-usrname@hostname:~/curr_path$ sudo cp cuda/include/* /usr/local/cuda-10.2/include/
-usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.2/lib64/libcudnn*
-usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.2/include/cudnn.h
+usrname@hostname:~/curr_path$ tar xzvf cudnn-10.1-linux-x64-v7.6.5.32.tgz
+usrname@hostname:~/curr_path$ sudo cp cuda/lib64/* /usr/local/cuda-10.1/lib64/
+usrname@hostname:~/curr_path$ sudo cp cuda/include/* /usr/local/cuda-10.1/include/
+usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.1/lib64/libcudnn*
+usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.1/include/cudnn.h
 ```
 
 C. Check the installed cuDNN version.<br />
 ```bash
-usrname@hostname:~/curr_path$ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+usrname@hostname:~/curr_path$ cat /usr/local/cuda-10.1/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 ```bash
     #define CUDNN_MAJOR 7
@@ -490,11 +519,6 @@ usrname@hostname:~/curr_path$ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_M
     #define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
 
     #include "driver_types.h"
-```
-
-D. Install the NVIDIA CUDA profiler tools interface.<br />
-```bash
-usrname@hostname:~/curr_path$ sudo apt-get install libcupti-dev
 ```
 
 
@@ -898,7 +922,12 @@ usrname@hostname:~/curr_path$ unset LD_LIBRARY_PATH
 ```
 
 
-## 22. How to set a Pycharm environment <a name="pycharm"></a>
+## 22. How to install a TensorRT and Torch2TRT <a name="tensorrt_torch2trt"></a>
+A. Reference to the website,
+<a href="https://github.com/vujadeyoon/TensorRT-Torch2TRT" title="TensorRT-Torch2TRT">TensorRT-Torch2TRT</a>.<br />
+
+
+## 23. How to set a Pycharm environment <a name="pycharm"></a>
 A. Download a Pycharm which is a kind of Python IDEs with reference to the website,
 <a href="https://www.jetbrains.com/pycharm/download/#section=linux" title="Pycharm">
 Pycharm
@@ -925,7 +954,7 @@ E. How to set a project interpreter.<br />
 <img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/13_Pycharm/2.png" width="80%"/><br />
 
 
-## 23. Others <a name="others"></a>
+## 24. Others <a name="others"></a>
 A. How to fix NTFS disk write-protect.<br />
 ```bash
 usrname@hostname:~/curr_path$ sudo ntfsfix /dev/sdb1
