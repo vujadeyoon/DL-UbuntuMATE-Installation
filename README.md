@@ -26,7 +26,7 @@
 19. [How to install and use an Anaconda](#conda)
 20. [How to install a PyTorch](#pytorch)
 21. [How to install a TensorFlow](#tensorflow)
-22. [How to install a TensorRT and Torch2TRT](#tensorrt_torch2trt)
+22. [How to install both TensorRT and Torch2TRT](#tensorrt_torch2trt)
 23. [How to set an Pycharm environment](#pycharm)
 24. [Others](#others)
 
@@ -922,7 +922,7 @@ usrname@hostname:~/curr_path$ unset LD_LIBRARY_PATH
 ```
 
 
-## 22. How to install a TensorRT and Torch2TRT <a name="tensorrt_torch2trt"></a>
+## 22. How to install both TensorRT and Torch2TRT <a name="tensorrt_torch2trt"></a>
 A. Reference to the website,
 <a href="https://github.com/vujadeyoon/TensorRT-Torch2TRT" title="TensorRT-Torch2TRT">TensorRT-Torch2TRT</a>.<br />
 
