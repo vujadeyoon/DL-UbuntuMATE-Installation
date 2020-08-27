@@ -507,7 +507,7 @@ usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.1/lib64/libcudnn
 usrname@hostname:~/curr_path$ sudo chmod a+r /usr/local/cuda-10.1/include/cudnn.h
 ```
 
-C. Check the installed cuDNN version.<br />
+E. Check the installed cuDNN version.<br />
 ```bash
 usrname@hostname:~/curr_path$ cat /usr/local/cuda-10.1/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
