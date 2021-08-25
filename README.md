@@ -1,7 +1,7 @@
 # Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - Deep Learning Framework Installation on Ubuntu MATE 18.04 LTS
 - I recommend that you should ignore the commented instructions with an octothorpe, #.
-- Modified date: Aug. 27, 2020.
+- Modified date: Aug. 25, 2021.
 
 ## Table of contents
 0.  [Summarized environments about the DL-UbuntuMATE18.04LTS-Installation](#envs)
@@ -50,13 +50,13 @@
 A. Run the Language Support program and install it completely.<br />
 B. Select a fcitx option for a keyboard input method system.<br />
 &nbsp; &nbsp; Note that the fcitx option is valid when rerunning the program.<br /> 
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/1_Language/1.png" width="80%"/><br />
 C. Logout and login<br />
 D. Click the configure tab of a keyboard icon in the upper right corner of the desktop.<br />
 E. Add input method (e.g. Hangul).<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/2.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/1_Language/2.png" width="80%"/><br />
 F. Set an input method configuration.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/1_Language/3.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/1_Language/3.png" width="80%"/><br />
 
 
 ## 2. How to remove the Firefox browser and install other browsers <a name="web_browser"></a>
@@ -132,7 +132,7 @@ usrname@hostname:~/curr_path$ sudo snap install remmina
 ```
 
 C. Set the Remmina remote desktope preference.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/4_Remmina/1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/4_Remmina/1.png" width="80%"/><br />
 
 
 ## 10. How to install, uninstall and set both ssh and scp <a name="ssh_scp"></a>
@@ -159,7 +159,7 @@ A. Check a NVIDIA driver version with reference to the website,
 <a href="https://www.nvidia.com/Download/Find.aspx" title="NVIDIA driver">
 NVIDIA driver
 </a>.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/7_GPU_driver/1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/7_GPU_driver/1.png" width="80%"/><br />
 
 B. Install the NVIDIA driver which user selects.<br />
 ```bash
@@ -207,7 +207,7 @@ CUDA toolkit archive
 <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#abstract" title="NVIDIA CUDA Installation Guide for Linux">
 NVIDIA CUDA Installation Guide for Linux
 </a>.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/8_CUDA_toolkit/10.1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/8_CUDA_toolkit/10.1.png" width="80%"/><br />
 
 B. Install the CUDA toolkit which user selects.<br />
 ```bash
@@ -354,7 +354,7 @@ cuDNN
 <a href="https://developer.nvidia.com/rdp/cudnn-archive" title="cuDNN archive">
 cuDNN archive
 </a>.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/9_cuDNN/7.6.5.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/9_cuDNN/7.6.5.png" width="80%"/><br />
 
 B. Install the downloaded cuDNN.<br />
 ```bash
@@ -948,10 +948,10 @@ usrname@hostname:~/curr_path$ ~/pycharm-community-2018.3.2/pycharm.sh
 ```
 
 D. Create a new project with existing interpreter which is in a specific conda environment (e.g. conda_dl).<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/13_Pycharm/1.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/13_Pycharm/1.png" width="80%"/><br />
 
 E. How to set a project interpreter.<br />
-<img src="https://github.com/vujadeyoon/DL-UbuntuMATE18.04LTS-Installation/blob/master/Figures/13_Pycharm/2.png" width="80%"/><br />
+<img src="https://github.com/vujadeyoon/DL-UbuntuMATE-Installation/blob/Ubuntu_MATE_18.04_LTS/Figures/13_Pycharm/2.png" width="80%"/><br />
 
 
 ## 24. Others <a name="others"></a>
